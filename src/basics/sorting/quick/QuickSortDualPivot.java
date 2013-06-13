@@ -16,16 +16,6 @@ public class QuickSortDualPivot {
 
 		if (highIndex<=lowIndex) return;
 		
-		
-		//skip longest ascending sequence & duplicates if any at the initial part
-		while (input[lowIndex+1]>=input[lowIndex]){
-			lowIndex++;
-			
-			if (lowIndex>=highIndex){
-				return;
-			}
-		}
-
 		//System.out.println("LowIndex/HighIndex :"+lowIndex+"/"+highIndex);
 		int pivot1=input[lowIndex];
 		int pivot2=input[highIndex];

@@ -10,19 +10,19 @@ import java.util.Arrays;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class QuickSortTest {
+public class QuickSortTracingEnabledTest {
 
 	public static int[] input;
 	@BeforeClass
 	public static void setup(){
-		//input=generateRandomData(10000000);
-		input=generateDuplicateData(10000000);
+		input=generateRandomData(10);
+		//input=generateDuplicateData(10000000);
 	}
 	 
 
-	@Test
+	//@Test
 	public void testQuickSortBasic() {
-		QuickSortBasic sort = new QuickSortBasic();
+		QuickSortBasicTracingEnabled sort = new QuickSortBasicTracingEnabled();
 		int[] copiedArray=Arrays.copyOf(input, input.length);
 		
 		long startTime = System.nanoTime();    
@@ -34,9 +34,9 @@ public class QuickSortTest {
 	}
 	
  
-	@Test
+	//@Test
 	public void testQuickSort3Way() {
-		QuickSort3Way sort = new QuickSort3Way();
+		QuickSort3WayTracingEnabled sort = new QuickSort3WayTracingEnabled();
 		int[] copiedArray=Arrays.copyOf(input, input.length);
 		
 		long startTime = System.nanoTime();    
@@ -51,7 +51,7 @@ public class QuickSortTest {
 
 	@Test
 	public void testQuickSortDualPivot() {
-		QuickSortDualPivot sort = new QuickSortDualPivot();
+		QuickSortDualPivotTracingEnabled sort = new QuickSortDualPivotTracingEnabled();
 		int[] copiedArray=Arrays.copyOf(input, input.length);
 		
 		long startTime = System.nanoTime();    
@@ -59,6 +59,7 @@ public class QuickSortTest {
 		long timeTaken = System.nanoTime() - startTime;
 		
 		System.out.println("Quick Sort Dual Pivot : "+ timeTaken/1000000 +" millis");
+		assertTrue(isSorted(copiedArray));
  
 	}
 	

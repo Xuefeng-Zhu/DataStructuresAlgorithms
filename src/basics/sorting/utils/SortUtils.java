@@ -1,5 +1,7 @@
 package basics.sorting.utils;
 
+import static basics.sorting.utils.SortUtils.traceArrayToString3Space;
+
 import java.util.Random;
 
 public class SortUtils {
@@ -33,7 +35,7 @@ public class SortUtils {
 
 		StringBuilder builder = new StringBuilder();
 		for (Comparable eachItem : array) {
-			builder.append(eachItem).append(":");
+			builder.append(eachItem).append(" : ");
 		}
 
 		return builder.toString();
@@ -46,7 +48,49 @@ public class SortUtils {
 
 		StringBuilder builder = new StringBuilder();
 		for (int eachItem : input) {
-			builder.append(eachItem).append(":");
+			builder.append(eachItem).append(" : ");
+		}
+
+		return builder.toString();
+
+	}
+	
+	
+	public static String intArrayToString3Space(int[] input) {
+		if (input == null) {
+			return "NULL ARRAY";
+		}
+
+		StringBuilder builder = new StringBuilder();
+		for (int eachItem : input) {
+			builder.append(eachItem).append("    :    ");
+		}
+
+		return builder.toString();
+
+	}
+	
+	public static String traceArrayToString3Space(String[] traceArray) {
+		if (traceArray == null) {
+			return "NULL ARRAY";
+		}
+
+		StringBuilder builder = new StringBuilder();
+		for (String eachItem : traceArray) {
+			if (!(eachItem.contains("/"))){
+				builder.append(eachItem).append("    :    ");
+			}
+			else{
+				int countOccurence=4;
+				for (String eachTerm : eachItem.split("/")) {
+					countOccurence--;
+					builder.append(eachTerm);
+				}
+				for (int i = 0; i < countOccurence; i++) {
+					builder.append(" ");
+				}
+				builder.append(" :    ");   
+			}
 		}
 
 		return builder.toString();
@@ -111,5 +155,28 @@ public class SortUtils {
 
 		return newArray;
 	}
-	
+
+	public static void insertBreak(int inputLength) {
+		for (int tmp = 0; tmp < inputLength; tmp++) System.out.print("-----------");
+	}
+
+
+	public static void addToTracer(String[] tracer, int index, String markerString) {
+		if (tracer[index].trim().equals("")){
+			tracer[index]=markerString;
+		}
+		else{
+			tracer[index]=tracer[index]+"/"+markerString;
+		}
+		
+	}
+
+	public static String[] cleanupArray(String[] tracer) {
+
+		for (int tmp = 0; tmp < tracer.length; tmp++) {
+			tracer[tmp]=" ";
+		}
+		
+		return tracer;
+	}
 }
