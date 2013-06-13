@@ -59,6 +59,8 @@ public class QuickSortTest {
 		long timeTaken = System.nanoTime() - startTime;
 		
 		System.out.println("Quick Sort Dual Pivot : "+ timeTaken/1000000 +" millis");
+		
+		assertTrue(isSorted(copiedArray));
  
 	}
 	

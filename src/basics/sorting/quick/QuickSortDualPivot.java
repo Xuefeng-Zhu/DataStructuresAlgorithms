@@ -27,6 +27,12 @@ public class QuickSortDualPivot {
 			pivot2=input[highIndex];
 			//sort(input, lowIndex, highIndex);
 		}
+		else if (pivot1==pivot2){
+			while (pivot1==pivot2 && lowIndex<highIndex){
+				lowIndex++; 
+				pivot1=input[lowIndex];
+			}
+		}
 		
 
 		int i=lowIndex+1;
