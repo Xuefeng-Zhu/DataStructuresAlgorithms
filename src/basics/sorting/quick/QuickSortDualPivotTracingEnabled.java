@@ -47,6 +47,15 @@ public class QuickSortDualPivotTracingEnabled {
 			insertBreak(input.length);
 			System.out.println("\nPivot 1 ="+pivot1 +"  &  Pivot 2 ="+pivot2);
 		}
+		else if (pivot1==pivot2){
+			
+			while (pivot1==pivot2 && lowIndex<highIndex){
+				lowIndex++; 
+				pivot1=input[lowIndex];
+			}
+			
+			System.out.println("Pivot 1 and 2 are the same. Fastwarding lowIndex until pivots are different. Low Index is now -  "+lowIndex);
+		}
 		
 
 		int i=lowIndex+1;

@@ -16,11 +16,11 @@ public class QuickSortTracingEnabledTest {
 	@BeforeClass
 	public static void setup(){
 		input=generateRandomData(10);
-		//input=generateDuplicateData(10000000);
+		//input=generateDuplicateData(10);
 	}
 	 
 
-	//@Test
+	@Test
 	public void testQuickSortBasic() {
 		QuickSortBasicTracingEnabled sort = new QuickSortBasicTracingEnabled();
 		int[] copiedArray=Arrays.copyOf(input, input.length);
@@ -34,7 +34,7 @@ public class QuickSortTracingEnabledTest {
 	}
 	
  
-	//@Test
+	@Test
 	public void testQuickSort3Way() {
 		QuickSort3WayTracingEnabled sort = new QuickSort3WayTracingEnabled();
 		int[] copiedArray=Arrays.copyOf(input, input.length);
