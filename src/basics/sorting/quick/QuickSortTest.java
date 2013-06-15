@@ -16,7 +16,7 @@ public class QuickSortTest {
 	@BeforeClass
 	public static void setup(){
 		//input=generateRandomData(10000000);
-		input=generateDuplicateData(10000000);
+		input=generateDuplicateData(1000);
 	}
 	 
 

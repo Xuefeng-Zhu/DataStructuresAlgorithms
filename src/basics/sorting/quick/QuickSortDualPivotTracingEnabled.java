@@ -69,7 +69,7 @@ public class QuickSortDualPivotTracingEnabled {
 			
 			if (less(input[i], pivot1)){
 				
-				System.out.println(input[i] + " is < Pivot 1 ="+ pivot1 +". Exchange "+input[i] +" with " + input[lt] + " and increment both markers ");
+				System.out.println(input[i] + " is < Pivot 1 ("+ pivot1 +"). Exchange "+input[i] +" with " + input[lt] + " and increment both markers ");
 				exchange(input, i++, lt++);
 				
 				System.out.println(intArrayToString3Space(input));
@@ -77,14 +77,14 @@ public class QuickSortDualPivotTracingEnabled {
 			}
 			else if (less(pivot2, input[i])){
 				
-				System.out.println("Pivot 2 =" +pivot2 +" is < "+input[i]+". Exchange "+input[i] +" with " + input[gt] + " and decrement gt");
+				System.out.println("Pivot 2 (" +pivot2 +") is < "+input[i]+". Exchange "+input[i] +" with " + input[gt] + " and decrement gt");
 				exchange(input, i, gt--);
 				
 				System.out.println(intArrayToString3Space(input));
 				trace(lowIndex, highIndex, i, lt, gt, input.length);
 			}
 			else{
-				System.out.println(input[i] + " is between Pivot 1 and 2 - "+ pivot1+ " & " + pivot2 + " pivotValue. Just increment i");
+				System.out.println(input[i] + " is between Pivot 1 and 2 ("+ pivot1+ " & " + pivot2 + "). Just increment i");
 				i++;
 				
 				System.out.println(intArrayToString3Space(input));

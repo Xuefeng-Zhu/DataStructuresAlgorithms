@@ -179,4 +179,38 @@ public class SortUtils {
 		
 		return tracer;
 	}
+	
+	public static boolean isHeap(int[] input, int heapRoot) {
+		
+		//System.out.println("Heap Root input : :::: "+heapRoot);
+		int lastIndex=input.length-1;
+		
+		if (heapRoot>=lastIndex/2+1) return true; //leaf nodes
+		
+		//System.out.println("condition 1 " +(((heapRoot*2))+2));
+		if (((heapRoot*2)+2)<lastIndex){
+			
+			//System.out.println("Compare 1 : "+ input[heapRoot] + " vs "+ input[heapRoot*2+1] + " & "+ input[heapRoot*2 +2]);
+			if (input[heapRoot]>=input[heapRoot*2+2] && input[heapRoot]>= input[heapRoot*2+1]){
+				return isHeap(input, heapRoot+1);
+			}
+			else{
+				return false;
+			}
+			
+		}
+		else{
+			
+			//System.out.println("Compare 2 : "+ input[heapRoot] + " vs "+ input[heapRoot*2 +1]);
+			
+			if (input[heapRoot]> input[heapRoot*2+1]){
+				//return isHeapOrdered(input, heapRoot+1);
+				return true; //True would do. Heap is a complete BT
+			}
+			else{
+				return false;
+			}
+		}
+		
+	}
 }

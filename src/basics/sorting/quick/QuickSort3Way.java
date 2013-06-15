@@ -8,7 +8,7 @@ public class QuickSort3Way {
 	
 	
 	public void sort (int[] input){
-		input=shuffle(input);
+		//input=shuffle(input);
 		sort (input, 0, input.length-1);
 	}
 
