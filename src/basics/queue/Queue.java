@@ -27,10 +27,7 @@ public class Queue<Item> {
 	}
 	
 	public boolean isEmpty(){
-		if (size==0){
-			return true;
-		}
-		return false;
+		return size == 0
 	}
 	
 	public String list(){
